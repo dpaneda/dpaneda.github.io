@@ -1,6 +1,6 @@
 function setup() {
   //createCanvas(600, 800);
-  createCanvas(1600, 2400);
+  createCanvas(1080, 2400);
   background(0, 0, 0);
   stroke(0);
   fill("#ffecc0");
