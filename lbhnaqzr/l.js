@@ -1,13 +1,14 @@
 function setup() {
-  createCanvas(600, 800);
+  //createCanvas(600, 800);
+  createCanvas(1600, 2400);
   background(0, 0, 0);
   stroke(0);
   fill("#ffecc0");
   rect(0, 0, width, height);
   noStroke();
 
-  const circle_size = 5;
-  const grouth_factor = 3;
+  const circle_size = 10;
+  const grouth_factor = 2;
   const radius = circle_size * 10 + circle_size;
   const movement_factor = 5;
   const pos_x = width - ((circle_size * 2 + circle_size) * 11);
@@ -24,8 +25,8 @@ function setup() {
 
       if (i == pos_x && j == pos_y) {
         fill(0, 0, 0);
-        circle(i, j, circle_size / 1.5);
-        circle(i - 6, j, circle_size / 1.43);
+        circle(i + 8, j, circle_size * 1.5);
+        circle(i - 7, j, circle_size * 1.5);
       } else if ((i >= pos_x - radius && j >= pos_y + radius) ||
           (i <= pos_x + radius && j <= pos_y - radius) || 
           (i <= pos_x - radius && j >= pos_y - radius) ||
