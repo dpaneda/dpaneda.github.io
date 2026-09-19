@@ -42,7 +42,7 @@ input{background:#111827;color:#f3f4f6;border:1px solid #4b5563;box-sizing:borde
   <label for="initialDisplayName">Your name (optional)</label>
   <input id="initialDisplayName" placeholder="Name or alias">
   <p class="hint">If left empty, the page hostname will be used.</p>
-  <button id="createCallButton">Crear llamada</button>
+  <button id="createCallButton">Create call</button>
 </section>
 
 <section id="setup" class="panel hidden">
@@ -256,11 +256,11 @@ function initializeDataChannel(channel){
   dataChannel=channel;
   dataChannel.onopen=()=>{
     setChatAvailability(true);
-    log("WebRTC conectado. Chat disponible.");
+    log("WebRTC connected. Chat disponible.");
   };
   dataChannel.onclose=()=>{
     setChatAvailability(false);
-    log("Chat desconectado.");
+    log("Chat disconnected.");
   };
   dataChannel.onerror=error=>console.warn("DataChannel error",error);
   dataChannel.onmessage=event=>{
@@ -292,7 +292,7 @@ function createPeerConnection(){
   };
 
   pc.onconnectionstatechange=()=>{
-    log("Status de conexión: "+pc.connectionState);
+    log("Status de connection: "+pc.connectionState);
     if(pc.connectionState==="connected"){
       setRoomState("Connected");
       hide("shareLinkArea");
@@ -317,7 +317,7 @@ async function handleSignalingMessage(type,data){
   }else if(type==="answer"&&mode==="create"){
     await pc.setRemoteDescription(data.description);
     setRoomState("Answer received. Connecting...");
-    log("Respuesta recibida.");
+    log("Answer recibida.");
   }
 }
 
